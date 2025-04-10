@@ -18,14 +18,14 @@ def is_valid_url(url: str) -> bool:
         return False
 
 @retry(stop=stop_after_attempt(MAX_RETRIES), wait=wait_fixed(RETRY_DELAY))
-def fetch_url(url: str) -> Tuple[str, str]:
+def fetch_url(url: str) -> str:
     """Fetch content from a URL with retries.
     
     Args:
         url: The URL to fetch
         
     Returns:
-        Tuple of (text content, content type)
+        HTML content as string
     
     Raises:
         Exception: If the request fails after retries
@@ -56,7 +56,7 @@ def fetch_url(url: str) -> Tuple[str, str]:
         # 특별한 페이지 타입 처리 (예: 뉴스 사이트)
         is_news_site = any(domain in url.lower() for domain in ['news.', 'cnn.com', 'bbc.', 'nytimes.', 'reuters.', 'bloomberg.'])
         
-        return response.text, content_type
+        return response.text
     except Exception as e:
         if VERBOSE:
             print(f"Error fetching {url}: {str(e)}")
@@ -306,4 +306,73 @@ def clean_text(text: str) -> str:
     # UTF-8 디코딩 이슈 처리
     text = text.encode('utf-8', errors='ignore').decode('utf-8')
     
-    return text 
+    return text
+
+def should_exclude_url(url: str) -> bool:
+    """URL이 탐색 제외 대상인지 평가합니다.
+    
+    Args:
+        url: 평가할 URL
+        
+    Returns:
+        True면 제외, False면 탐색 대상
+    """
+    import re
+    from urllib.parse import urlparse
+    
+    # URL 파싱
+    parsed = urlparse(url)
+    
+    # 기본 검사: 빈 URL, 프래그먼트만 있는 URL
+    if not url or not parsed.netloc:
+        return True
+    
+    # 소셜 미디어 URL은 제외
+    social_domains = [
+        'facebook.com', 'twitter.com', 'instagram.com', 'linkedin.com',
+        'youtube.com', 'pinterest.com', 'reddit.com', 't.me', 'medium.com'
+    ]
+    
+    if any(domain in parsed.netloc for domain in social_domains):
+        return True
+    
+    # 특정 파일 확장자는 제외
+    file_extensions = [
+        '.jpg', '.jpeg', '.png', '.gif', '.svg', '.webp', '.ico',
+        '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx',
+        '.zip', '.tar', '.gz', '.rar', '.7z', '.mp3', '.mp4', '.avi',
+        '.mov', '.wmv', '.flv', '.exe', '.dmg', '.pkg', '.deb', '.rpm'
+    ]
+    
+    if any(parsed.path.lower().endswith(ext) for ext in file_extensions):
+        return True
+    
+    # 특정 URL 패턴은 제외
+    exclude_patterns = [
+        r'/login/?', r'/logout/?', r'/signup/?', r'/register/?',
+        r'/account/?', r'/profile/?', r'/user/?', r'/admin/?',
+        r'/cart/?', r'/checkout/?', r'/purchase/?', r'/order/?',
+        r'/search/?', r'\?s=', r'\?q=', r'\?search=',
+        r'/page/\d+/?$', r'/\d{4}/\d{2}(/\d{2})?/?$',  # 페이지네이션, 날짜 아카이브
+        r'/wp-', r'/wp-admin', r'/wp-content', r'/wp-includes',
+        r'/xmlrpc.php', r'/feed/?$', r'/rss/?$', r'/atom/?$',
+        r'/comments/', r'/trackback/', r'/cgi-bin/',
+        r'\?utm_', r'\?fbclid=', r'\?gclid=', r'\?ref='  # 추적 매개변수
+    ]
+    
+    for pattern in exclude_patterns:
+        if re.search(pattern, url, re.IGNORECASE):
+            return True
+    
+    # 프래그먼트(#)가 있는 URL은 같은 페이지 내 다른 섹션일 가능성이 높으므로 제외
+    if parsed.fragment:
+        return True
+    
+    # 쿼리 매개변수가 너무 많은 URL은 동적 페이지이거나 검색 결과일 가능성이 높음
+    if parsed.query:
+        query_params = parsed.query.split('&')
+        if len(query_params) > 3:
+            return True
+    
+    # 모든 검사를 통과하면 탐색 대상
+    return False 
