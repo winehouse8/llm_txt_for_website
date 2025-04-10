@@ -33,8 +33,9 @@ pip install -r requirements.txt
 
 3. Set up your OpenAI API key in a `.env` file:
 ```
-OPENAI_API_KEY=your_api_key_here
+OPENAI_API_KEY=sk-qasdaasd123456789
 ```
+Create a file named `.env` in the project root directory and add your OpenAI API key as shown above. Replace the example key with your actual OpenAI API key.
 
 ## Usage
 
