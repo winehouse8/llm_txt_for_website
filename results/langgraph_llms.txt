@@ -1,0 +1,33 @@
+# LangGraph Documentation
+
+https://langchain-ai.github.io/langgraph/tutorials/introduction/: LLM should read this page when needing to understand the basics of building a support chatbot with LangGraph, including details about StateGraph structure, state management, and debugging practices.
+
+https://langchain-ai.github.io/langgraph/reference/graphs/: LLM should read this page when looking for information on creating and manipulating graphs in LangChain, particularly regarding methods for adding nodes and edges, setting entry points, and managing execution flow.
+
+https://langchain-ai.github.io/langgraph/tutorials/deployment/: LLM should read this page when seeking guidance on deploying LangGraph applications, including options for local and cloud deployment, as well as pricing models.
+
+https://langchain-ai.github.io/langgraph/how-tos/: LLM should read this page for practical guidance on specific functionalities in LangGraph, such as updating graph state, managing conversation memory, and implementing human-in-the-loop workflows.
+
+https://langchain-ai.github.io/langgraph/concepts/: LLM should read this page to understand the foundational concepts of LangGraph, including agent workflows, multi-agent systems, and the overall framework structure.
+
+https://langchain-ai.github.io/langgraph/tutorials/: LLM should read this page for quickstart guides and common workflows for developing applications with LangGraph, including chatbot creation and retrieval-augmented generation strategies.
+
+https://langchain-ai.github.io/langgraph/tutorials/workflows/: LLM should read this page to learn about the distinction between workflows and agents in LangGraph, as well as benefits like persistence, streaming, and prompt chaining.
+
+https://langchain-ai.github.io/langgraph/cloud/quick_start/: LLM should read this page when needing to understand the prerequisites and steps for deploying LangGraph applications on LangGraph Cloud.
+
+https://langchain-ai.github.io/langgraph/prebuilt/: LLM should read this page for insights into prebuilt agents and libraries that extend LangGraph's functionality, including how to use the prebuilt React agent.
+
+https://langchain-ai.github.io/langgraph/adopters/: LLM should read this page to learn about companies using LangGraph and their specific use cases across various industries, which can provide context for its applications.
+
+https://langchain-ai.github.io/langgraph/llms-txt-overview/: LLM should read this page for an overview of the LLMS-txt format, its usage in accessing programming documentation, and strategies for managing large documentation files.
+
+https://langchain-ai.github.io/langgraph/concepts/faq/: LLM should read this page for frequently asked questions about LangGraph, including its open-source nature, deployment options, and compatibility with various LLMs.
+
+https://langchain-ai.github.io/langgraph/troubleshooting/errors/: LLM should read this page for troubleshooting common errors in LangGraph, including specific error codes and their meanings.
+
+https://langchain-ai.github.io/langgraph/reference/constants/: LLM should read this page to understand the constants used in LangGraph for managing graph structures and optimizing memory usage.
+
+https://langchain-ai.github.io/langgraph/reference/prebuilt/: LLM should read this page for details on prebuilt components in LangChain, including how to create chat agents and manage message histories.
+
+https://langchain-ai.github.io/langgraph/reference/checkpoints/: LLM should read this page for information on checkpointing in LangChain, including how to create custom checkpoint savers and manage state persistence.

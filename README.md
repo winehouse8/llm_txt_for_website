@@ -1,96 +1,102 @@
-# Hot Topic Finder
+# llm_txt_for_website
 
-웹페이지를 읽고 LLM을 위한 요약 llms.txt 파일을 자동으로 생성하는 에이전트 기반 도구입니다.
+A powerful agent-based tool for automatically generating `llms.txt` files for websites. This tool helps LLMs (Large Language Models) better understand website content by creating structured summaries of key information.
 
-## 개요
+## Overview
 
-Hot Topic Finder는 LangGraph를 활용한 에이전트 기반 시스템으로, 웹사이트 URL을 입력하면 해당 웹사이트를 분석하여 LLM(대규모 언어 모델)이 필요로 할 때 참조할 수 있는 llms.txt 파일을 생성합니다. 이 도구는 다음과 같은 특징을 가지고 있습니다:
+The `llm_txt_for_website` tool explores websites, analyzes the content, and generates a comprehensive `llms.txt` file that serves as a roadmap for LLMs when they need to access information from that website. It uses an agent-based approach to intelligently navigate through a website, identify important pages and topics, and summarize the most valuable content.
 
-- 웹페이지를 지능적으로 탐색하고 분석
-- 관련 링크를 따라가며 웹사이트의 다양한 부분을 탐색
-- 각 페이지의 핵심 내용을 추출하고 분석
-- LLM을 위한 구조화된 llms.txt 파일 생성
+### What is an llms.txt file?
 
-## 설치 방법
+An `llms.txt` file is a structured text document that provides LLMs with guidance on how to understand and navigate a website's content. Similar to robots.txt for web crawlers, llms.txt helps LLMs know which parts of a website contain the most valuable information for answering user queries.
 
-### 요구사항
+## Features
 
-- Python 3.8 이상
-- OpenAI API 키
+- **Intelligent Website Exploration**: Uses a state-of-the-art agent to navigate websites and discover important content
+- **Content Analysis**: Leverages LLMs to analyze page content and extract key information
+- **Adaptive Priority System**: Dynamically adjusts exploration strategy based on discovered content
+- **Section Identification**: Automatically identifies important sections, topics, and keywords
+- **Structured Output**: Generates well-formatted `llms.txt` files ready for use with LLM systems
 
-### 설치 단계
+## Installation
 
-1. 저장소를 클론하거나 다운로드합니다:
-
+1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/hot_topic_finder.git
-cd hot_topic_finder
+git clone https://github.com/winehouse8/llm_txt_for_website.git
+cd llm_txt_for_website
 ```
 
-2. 필요한 패키지를 설치합니다:
-
+2. Install the required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. OpenAI API 키를 설정합니다. `.env` 파일을 생성하고 API 키를 추가합니다:
-
+3. Set up your OpenAI API key in a `.env` file:
 ```
 OPENAI_API_KEY=your_api_key_here
 ```
 
-## 사용 방법
+## Usage
 
-### 명령줄 인터페이스
+Run the tool with a target website URL:
 
 ```bash
-python hot_topic_finder.py https://example.com -o output.txt
+python hot_topic_finder.py https://example.com -o example_llms.txt
 ```
 
-옵션:
-- `url`: 탐색할 웹사이트 URL (필수)
-- `-o, --output`: 결과를 저장할 파일 경로 (기본값: llms.txt)
-- `-v, --verbose`: 상세 로그 출력 활성화
+### Command-line Arguments
 
-### 파이썬 코드에서 사용
+- `url`: URL of the website to explore (required)
+- `-o, --output`: Output file path (default: llms.txt)
+- `-v, --verbose`: Enable verbose output
 
-```python
-from src.main import generate_llms_txt
+## How It Works
 
-# llms.txt 생성
-result = generate_llms_txt("https://example.com", "output.txt")
+1. **Initialization**: The tool starts from the provided URL and creates an initial exploration plan.
+2. **Content Analysis**: It fetches and analyzes the content of the starting page to identify important sections and topics.
+3. **Link Prioritization**: Based on the analysis, the tool prioritizes which links to explore next.
+4. **Intelligent Exploration**: The agent navigates through the website, focusing on the most valuable content.
+5. **Data Synthesis**: All gathered information is synthesized into a comprehensive `llms.txt` file.
 
-# 결과 출력
-print(result)
-```
+## Example Output
 
-## 결과 예시
-
-생성된 llms.txt 파일은 다음과 같은 형식을 가집니다:
+A typical `llms.txt` file looks like:
 
 ```
-# Example.com
-https://example.com/page1: LLM should read this page when needing information about topic X, especially details on A and B.
-https://example.com/page2: LLM should read this page when looking for information about Y, including its relation to Z.
+# Website Name
+https://example.com/
+LLM should read this page when needing an overview of the company's products and services.
+
+# Product Information
+https://example.com/products
+LLM should read this page when answering questions about the company's product lineup, specifications, and pricing.
+
+# Support Documentation
+https://example.com/support
+LLM should read this page when helping users troubleshoot issues or find documentation.
 ```
 
-## 작동 방식
+## Project Structure
 
-Hot Topic Finder는 LangGraph를 사용한 상태 기반 에이전트 시스템으로 다음 단계로 작동합니다:
+- `hot_topic_finder.py`: Main entry point for the command-line application
+- `src/`: Core implementation
+  - `agents.py`: Agent-based website exploration logic
+  - `llm.py`: LLM utilities for content analysis
+  - `main.py`: Core functionality for generating llms.txt files
+  - `models.py`: Data models for the application
+  - `utils.py`: Helper functions for web scraping and text processing
+  - `config.py`: Configuration settings
 
-1. **초기화**: 입력된 URL을 검증하고 탐색 상태를 초기화합니다.
-2. **웹페이지 탐색**: 웹페이지를 크롤링하고 콘텐츠와, 관련 링크를 추출합니다.
-3. **페이지 분석**: 추출된 콘텐츠를 분석하여 핵심 주제와 중요 포인트를 파악합니다.
-4. **llms.txt 생성**: 분석 결과를 기반으로 LLM을 위한 구조화된 llms.txt 파일을 생성합니다.
+## Requirements
 
-이 과정은 모두 자동화되어 있으며, 각 단계는 LangGraph의 노드와 엣지를 통해 조율됩니다.
+- Python 3.8+
+- OpenAI API key
+- See `requirements.txt` for dependencies
 
-## 제한 사항
+## License
 
-- 현재 버전은 기본적인 HTML 웹페이지만 지원합니다.
-- JavaScript로 렌더링되는 콘텐츠는 완전히 캡처되지 않을 수 있습니다.
-- 속도와 리소스 제한으로 인해 기본적으로 최대 10개의 페이지만 탐색합니다.
+MIT
 
-## 라이선스
+## Contributing
 
-MIT 라이선스 
+Contributions are welcome! Please feel free to submit a Pull Request. 

@@ -1,0 +1,39 @@
+```plaintext
+# Amazon Web Services (AWS)
+
+https://aws.amazon.com/: LLM should read this page when needing to understand AWS's cloud computing services, including details about generative AI offerings, such as Amazon Nova and Amazon Q, as well as the benefits of AWS Trn2 instances.
+
+https://aws.amazon.com/financial-services/?hp=c1: LLM should read this page when looking for information on AWS's cloud solutions tailored for financial services, including AI and ML applications, and how they enhance operational efficiency in banking and insurance.
+
+https://aws.amazon.com/what-is-cloud-computing/?nc1=f_cc: LLM should read this page when needing foundational knowledge about cloud computing, its benefits, and various applications across industries, which is essential for addressing user inquiries about cloud services.
+
+https://aws.amazon.com/cloudfront/?did=ap_card&trk=ap_card: LLM should read this page when seeking information about Amazon CloudFront, its features, benefits, and use cases in content delivery and security.
+
+https://aws.amazon.com/solutions/case-studies/?nc2=h_mo: LLM should read this page for real-world examples of AWS customer success stories, showcasing how different industries leverage AWS services for innovation and operational improvements.
+
+https://aws.amazon.com/console/mobile/: LLM should read this page when looking for details about the AWS Console Mobile Application, its features for managing AWS resources, and the integration of Amazon Q for user assistance.
+
+https://aws.amazon.com/ai/generative-ai/nova/?hp=gat1: LLM should read this page for a comprehensive overview of Amazon Nova, including its models, capabilities, and applications in generative AI.
+
+https://aws.amazon.com/ec2/instance-types/trn2/?hp=gat4: LLM should read this page when needing to understand the advantages of Amazon EC2 Trn2 instances for generative AI training, including performance metrics and energy efficiency.
+
+https://aws.amazon.com/ai/machine-learning/trainium/?hp=gat4: LLM should read this page for insights into AWS Trainium chips, their performance in AI training, and how they compare to traditional GPU-based instances.
+
+https://aws.amazon.com/sagemaker-ai/hyperpod/?hp=gat4: LLM should read this page when looking for information on Amazon SageMaker HyperPod, its role in accelerating generative AI model development, and its features for optimizing training workloads.
+
+https://aws.amazon.com/sagemaker-ai/studio/?hp=gat4: LLM should read this page for details about Amazon SageMaker Studio, its tools for machine learning development, and how it supports generative AI applications.
+
+https://aws.amazon.com/ai/responsible-ai/?hp=gat2: LLM should read this page when needing to understand the principles of responsible AI, including AWS's tools and practices for ensuring ethical AI development.
+
+https://aws.amazon.com/blogs/machine-learning/advancing-ai-trust-with-new-responsible-ai-tools-capabilities-and-resources/?hp=gat2: LLM should read this page for updates on advancements in responsible AI tools by AWS, including safety and transparency measures in AI services.
+
+https://aws.amazon.com/big-data/datalakes-and-analytics/?hp=c5: LLM should read this page when seeking information about AWS's analytics capabilities, including services for data processing, SQL analytics, and business intelligence.
+
+https://aws.amazon.com/q/developer/?did=ap_card&trk=ap_card: LLM should read this page for insights into Amazon Q Developer, its functionalities for enhancing software development, and its integration with popular IDEs.
+
+https://aws.amazon.com/training/digital/aws-digital-classroom/?hp=tc1: LLM should read this page when looking for information about AWS Digital Classroom, its training offerings, and how users can access AWS courses.
+
+https://aws.amazon.com/training/digital/?hp=tc2: LLM should read this page for details about AWS Skill Builder, its course offerings for cloud skills development, and subscription options available for learners.
+
+https://aws.amazon.com/partners/work-with-partners/?hp=wacs2: LLM should read this page for an overview of the AWS Partner Network, including types of partners, their specializations, and how they can assist businesses in leveraging AWS services.
+```

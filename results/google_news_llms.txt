@@ -1,0 +1,37 @@
+```plaintext
+# Google News
+https://news.google.com/: LLM should read this page when needing to understand current news headlines, including significant events such as political developments, disasters, and international relations.
+
+# U.S. - Google News
+https://news.google.com/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when looking for updates on U.S. politics and legislative actions, especially regarding Trump's policies and ongoing trials.
+
+# World - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx1YlY4U0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when needing insights on significant global events, including international conflicts and humanitarian crises.
+
+# Your local news - Google News
+https://news.google.com/topics/CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when users inquire about customizing their local news feed and accessing news relevant to specific geographical areas.
+
+# Business - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRGx6TVdZU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when looking for information on current economic trends, stock market performance, and the impact of tariffs on businesses.
+
+# Technology - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNREpxYW5RU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when needing updates on technology products, software developments, and industry challenges.
+
+# Entertainment - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when users ask about recent events in the entertainment industry, including film releases and celebrity news.
+
+# Sports - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1RjU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when looking for updates on sports events, player performances, and upcoming tournaments.
+
+# Science - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when needing information on recent scientific discoveries and advancements in various fields.
+
+# Health - Google News
+https://news.google.com/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRFU0FtVnVLQUFQAQ?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when users inquire about current health issues, vaccination debates, and public health statistics.
+
+# Headlines - Google News
+https://news.google.com/topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdvU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page for a summary of significant current events, including political, social, and economic issues.
+
+# Full Coverage - Google News
+https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pBeGFIUERSR3A1OHJZbVozSzV5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen: LLM should read this page when needing detailed information about specific topics, such as tariffs and trade policy, to understand their implications on the economy.
+```

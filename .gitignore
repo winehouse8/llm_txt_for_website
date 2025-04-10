@@ -46,4 +46,6 @@ Thumbs.db
 
 # Project specific
 google_news_llms.txt
-*_llms.txt 
+# Allow all result files in the results directory
+!/results/
+!/results/*_llms.txt 
